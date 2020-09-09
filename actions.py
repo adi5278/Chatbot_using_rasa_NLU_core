@@ -9,12 +9,10 @@ class ActionWeather(Action):
 		
 	def run(self, dispatcher, tracker, domain):
 		from apixu.client import ApixuClient
-		# api_key = 'f4611d0ba2a60c8a3d1c940ae97b3378' #your apixu key
-		# client = ApixuClient(api_key)
 		
 		loc = tracker.get_slot('location')
 		# current = client.getcurrent(q=loc)
-		params = {'access_key': 'f29287f263f1005bf613bd40f2415e14','query': loc}
+		params = {'access_key': 'your-api-access-key','query': loc}
 
 		api_result = requests.get('http://api.weatherstack.com/current', params)
 
